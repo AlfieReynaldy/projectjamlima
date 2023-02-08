@@ -33,6 +33,7 @@
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ $peminjaman->user->username }}</td>
                                 <td>{{ $peminjaman->buku->judul }}</td>
+                               
                                 <td>{{ $peminjaman->tgl_peminjaman }}</td>
                                 <td>{{ $peminjaman->tgl_pengembalian }}</td>
                                 <td>{{ $peminjaman->kondisi_buku_saat_dipinjam }}</td>

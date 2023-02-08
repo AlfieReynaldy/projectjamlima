@@ -29,7 +29,7 @@ class Peminjaman extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function bukus(){
+    public function buku(){
 
     
         return $this->belongsTo(Buku::class);

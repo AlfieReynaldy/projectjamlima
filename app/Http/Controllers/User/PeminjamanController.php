@@ -5,19 +5,21 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Buku;
 use App\Models\Peminjaman;
+use App\Models\Pesan;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PeminjamanController extends Controller{
     //PEMINJAMAN
-    // public function peminjaman(){
-    //     $peminjaman = Pesan::where('penerima_id', '!=', Auth::user()->id )
-    //     ->where('pengirim_id', Auth::user()->id)
-    //     ->get();
-    //     $penerimas = User::where('role', 'admin')
-    //     ->get();
-    //     return view('user.pesan.terkirim', compact('pesan', 'penerimas'));
-    // }
+    public function peminjaman(){
+        $peminjaman = Pesan::where('penerima_id', '!=', Auth::user()->id )
+        ->where('pengirim_id', Auth::user()->id)
+        ->get();
+        $penerimas = User::where('role', 'admin')
+        ->get();
+        return view('user.pesan.terkirim', compact('pesan', 'penerimas'));
+    }
 
     //RIWAYAT PEMINJAMAN
     public function riwayatPeminjaman(){
